@@ -1,5 +1,8 @@
 # textbar
-Centralized repo for scripts I use with TextBar
+
+Centralized repo for scripts I use with [TextBar](http://www.richsomerfield.com/apps/).
+
+(See [my TextBar review here](http://www.macstories.net/mac/textbar-puts-your-text-into-the-menu-bar/).)
 
 ## textbar-diskspace.sh
 
