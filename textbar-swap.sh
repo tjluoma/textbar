@@ -10,8 +10,7 @@
 # https://twitter.com/darkuncle/status/593513107940454400
 
 /usr/bin/top -S -n0 -l1 \
-| awk -F' ' '/^Swap/{print $2}' \
-| sed 's#M$# MB#g'
+| /usr/bin/awk -F' ' '/^Swap/{print $2}'
 
 exit
 #
