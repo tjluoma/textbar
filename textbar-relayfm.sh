@@ -24,6 +24,8 @@ case "$RELAY_STATUS" in
 
 			# Output the information to stdout
 		echo "🎣 $SHOW_TITLE"
+
+		exit 0
 	;;
 
 	*)
@@ -34,6 +36,7 @@ case "$RELAY_STATUS" in
 		FILE="${TMPDIR-/tmp/}$NAME.$RANDOM.html"
 
 		PREVIOUS="${TMPDIR-/tmp/}$NAME.previous.html"
+
 		CALENDAR_URL_HTML='https://www.google.com/calendar/htmlembed?showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=600&wkst=1&bgcolor=%23FFFFFF&src=relay.fm_t9pnsv6j91a3ra7o8l13cb9q3o@group.calendar.google.com&color=%23182C57&ctz=America/New_York'
 
 			# get the whole HTML, and reformat it with `tidy` and save it to a local file we can parse
@@ -71,11 +74,14 @@ case "$RELAY_STATUS" in
 					# but truncate it after 50 characters
 					# just in case it's full of junk
 				head -1 "$PREVIOUS" | colrm 50-
+
 				exit 0
+
 			else
 					# if a previous file doesn't exist
 					# or is 0 bytes, just give an error
 				echo "RelayFM Error"
+
 				exit 0
 			fi
 		fi
